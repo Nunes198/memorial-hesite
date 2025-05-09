@@ -22,6 +22,21 @@ export default function About() {
         <p className="text-lg text-gray-600 text-center">
           Este site foi criado para honrar e preservar as memórias de nossos entes queridos.
         </p>
+
+        <div className="text-center mt-8">
+          <p className="text-lg text-gray-600">Para mais informações entre em contato e faça seu orçamento:</p>
+          <div className="flex justify-center items-center mt-2">
+            <div className="relative w-6 h-6 mr-2">
+              <Image
+                src="/imagens/whatsapp.png" // Substitua pelo caminho da sua imagem do WhatsApp
+                alt="WhatsApp"
+                fill
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+            <span className="text-lg text-gray-600">(88) 99934-4202</span>
+          </div>
+        </div>
       </main>
     </div>
   );
