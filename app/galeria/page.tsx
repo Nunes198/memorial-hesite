@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Image from 'next/image';
+import Footer from '../components/Footer';
 
 // Defina o tipo para as fotos
 type Photo = {
@@ -79,6 +80,7 @@ export default function Gallery() {
           </div>
         )}
       </main>
+      <Footer />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import Navigation from '../components/Navigation';
 import Image from 'next/image';
+import Footer from '../components/Footer';
 
 export default function Family() {
   return (
@@ -134,6 +135,7 @@ export default function Family() {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

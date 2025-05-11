@@ -1,4 +1,5 @@
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 
 export default function Biography() {
   return (
@@ -34,6 +35,7 @@ export default function Biography() {
           </p>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

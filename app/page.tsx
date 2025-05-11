@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Navigation from './components/Navigation';
 import { useState, useEffect } from 'react';
+import Footer from './components/Footer';
 
 export default function Home() {
   const [count, setCount] = useState(0); // Estado para o contador
@@ -86,6 +87,7 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
