@@ -1,136 +1,122 @@
+"use client";
+
 import Navigation from '../components/Navigation';
 import Image from 'next/image';
 import Footer from '../components/Footer';
+import { useState } from 'react';
+
+type FamilyMember = {
+  id: number;
+  src: string;
+  name: string;
+  relation: string;
+  description?: string;
+};
 
 export default function Family() {
+  const [selectedMember, setSelectedMember] = useState<FamilyMember | null>(null);
+
+  const familyMembers: FamilyMember[] = [
+    {
+      id: 1,
+      src: '/imagens/avos.jpg',
+      name: 'Francisco Canuto da Silva',
+      relation: 'Pai',
+    },
+    {
+      id: 2,
+      src: '/imagens/avos1.jpg',
+      name: 'Rita Facundo de Almeida',
+      relation: 'Mãe',
+    },
+    {
+      id: 3,
+      src: '/imagens/nunes.jpg',
+      name: 'Nunes',
+      relation: 'Filho',
+      description: 'Saudade Eterna!!!',
+    },
+    {
+      id: 4,
+      src: '/imagens/nayane.jpg',
+      name: 'Nayane',
+      relation: 'Filha',
+      description: 'Saudade Eterna!!!',
+    },
+    {
+      id: 5,
+      src: '/imagens/esposa.jpg',
+      name: 'Maria Auxiliadora Lopes da Silva',
+      relation: 'Esposa',
+      description: 'Companheira de vida e amor eterno.',
+    },
+    {
+      id: 6,
+      src: '/imagens/neto.png',
+      name: 'Enzo Gabriel',
+      relation: 'Neto',
+    },
+  ];
+
   return (
     <div>
       <Navigation />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Família</h1>
-        
-        {/* Seção dos Pais */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">Pais</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Pai */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {familyMembers.map((member) => (
+            <div
+              key={member.id}
+              className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => setSelectedMember(member)}
+            >
               <div className="relative w-full h-64">
                 <Image
-                  src="/imagens/avos.jpg"
-                  alt="Foto do Pai"
+                  src={member.src}
+                  alt={member.name}
                   fill
                   style={{ objectFit: 'cover' }}
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Francisco Canuto da Silva</h3>
-                <p className="text-gray-600 mb-2">Pai</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
+                <p className="text-gray-600 mb-2">{member.relation}</p>
+                {member.description && (
+                  <p className="text-gray-500 text-sm">{member.description}</p>
+                )}
               </div>
             </div>
+          ))}
+        </div>
 
-            {/* Mãe */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-              <div className="relative w-full h-64">
+        {/* Modal */}
+        {selectedMember && (
+          <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+            <div className="relative bg-white rounded-lg shadow-lg p-4 max-w-3xl w-full">
+              <button
+                className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+                onClick={() => setSelectedMember(null)}
+              >
+                ✕
+              </button>
+              <div className="relative w-full h-96">
                 <Image
-                  src="/imagens/avos1.jpg"
-                  alt="Foto da Mãe"
+                  src={selectedMember.src}
+                  alt={selectedMember.name}
                   fill
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: 'contain' }}
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Rita Facundo de Almeida</h3>
-                <p className="text-gray-600 mb-2">Mãe</p>
+              <div className="mt-4 text-center">
+                <h3 className="text-lg font-semibold text-gray-900">{selectedMember.name}</h3>
+                <p className="text-sm text-gray-500">{selectedMember.relation}</p>
+                {selectedMember.description && (
+                  <p className="text-gray-500 text-sm mt-2">{selectedMember.description}</p>
+                )}
               </div>
             </div>
           </div>
-        </section>
-
-        {/* Seção dos Filhos */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">Filhos</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Primeiro Filho */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-              <div className="relative w-full h-64">
-                <Image
-                  src="/imagens/nunes.jpg"
-                  alt="Foto do Primeiro Filho"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Nunes</h3>
-                <p className="text-gray-600 mb-2">Filho</p>
-                <p className="text-gray-500 text-sm">
-                  Saudade Eterna!!!
-                </p>
-              </div>
-            </div>
-
-            {/* Segundo Filho */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-              <div className="relative w-full h-64">
-                <Image
-                  src="/imagens/nayane.jpg"
-                  alt="Foto do Segundo Filho"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Nayane</h3>
-                <p className="text-gray-600 mb-2">Filha</p>
-                <p className="text-gray-500 text-sm">
-                  Saudade Eterna!!!
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Seção de Outros Membros Queridos */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">Outros Membros Queridos</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Primeiro membro querido */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-              <div className="relative w-full h-64">
-                <Image
-                  src="/imagens/esposa.jpg"
-                  alt="Foto do Primeiro Membro Querido"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Maria Auxiliadora Lopes da Silva</h3>
-                <p className="text-gray-600 mb-2">Esposa</p>
-                <p className="text-gray-500 text-sm">
-                  Companheira de vida e amor eterno.
-                </p>
-              </div>
-            </div>
-
-            {/* Segundo membro querido */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
-              <div className="relative w-full h-64">
-                <Image
-                  src="/imagens/neto.png"
-                  alt="Foto do Segundo Membro Querido"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Enzo Gabriel</h3>
-                <p className="text-gray-600 mb-2">Neto</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        )}
       </main>
       <Footer />
     </div>
