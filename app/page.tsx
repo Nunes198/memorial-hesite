@@ -28,8 +28,8 @@ export default function Home() {
       <Navigation />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center">
-          {/* Foto Responsiva */}
-          <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 mx-auto mb-8 rounded-full overflow-hidden border-4 border-gray-200 shadow-lg">
+          {/* Foto Responsiva com Efeito ao Passar o Mouse */}
+          <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 mx-auto mb-8 rounded-full overflow-hidden border-4 border-gray-200 shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl">
             <Image
               src="/imagens/pai5.png" // Caminho correto
               alt="Foto do Ente Querido"
