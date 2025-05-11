@@ -2,10 +2,25 @@
 
 import Image from 'next/image';
 import Navigation from './components/Navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
   const [count, setCount] = useState(0); // Estado para o contador
+
+  // Carrega o valor do contador do localStorage ao carregar a página
+  useEffect(() => {
+    const savedCount = localStorage.getItem('velaCount');
+    if (savedCount) {
+      setCount(parseInt(savedCount, 10)); // Converte o valor salvo para número
+    }
+  }, []);
+
+  // Atualiza o localStorage sempre que o contador mudar
+  const handleButtonClick = () => {
+    const newCount = count + 1;
+    setCount(newCount);
+    localStorage.setItem('velaCount', newCount.toString());
+  };
 
   return (
     <div>
@@ -23,7 +38,7 @@ export default function Home() {
           </div>
           
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Em Memória de
+            Em Memória de:
           </h1>
           <h2 className="text-3xl font-semibold text-gray-700 mb-8">
             Joaquim Almeida da Silva
@@ -60,13 +75,13 @@ export default function Home() {
               Acenda uma vela para essa pessoa
             </p>
             <button
-              onClick={() => setCount(count + 1)}
+              onClick={handleButtonClick}
               className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded shadow-lg"
             >
               Clique Aqui
             </button>
             <p className="mt-4 text-gray-700 text-lg">
-              Velas acesas: <span className="font-bold">{count}</span>
+              Vela(s) acesa(s): <span className="font-bold">{count}</span>
             </p>
           </div>
         </div>
