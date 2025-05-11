@@ -37,6 +37,17 @@ export default function About() {
             </div>
             <span className="text-lg text-gray-600">(88) 99934-4202</span>
           </div>
+          {/* Botão do WhatsApp */}
+         <div className="mt-4">
+          <a
+           href="https://wa.me/5588999344202"
+            target="_blank"
+             rel="noopener noreferrer"
+            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded shadow-lg transform transition duration-300 hover:scale-105 text-sm sm:text-base md:text-lg lg:text-xl"
+          >
+          WhatsApp
+          </a>
+        </div>
         </div>
       </main>
       <Footer />
