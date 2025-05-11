@@ -28,7 +28,8 @@ export default function Home() {
       <Navigation />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center">
-          <div className="relative w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-gray-200 shadow-lg">
+          {/* Foto Responsiva */}
+          <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 mx-auto mb-8 rounded-full overflow-hidden border-4 border-gray-200 shadow-lg">
             <Image
               src="/imagens/pai5.png" // Caminho correto
               alt="Foto do Ente Querido"
@@ -59,15 +60,15 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Botão com contador */}
+          {/* Botão e Imagem Responsivos */}
           <div className="mt-12">
             {/* Imagem da vela */}
             <div className="mb-4">
               <Image
                 src="/imagens/vela1.png" // Caminho correto para a imagem da vela
                 alt="Imagem de uma vela"
-                width={150} // Largura igual ao botão
-                height={50} // Altura igual ao botão
+                width={160} // Largura ajustada para corresponder ao botão
+                height={48} // Altura ajustada para corresponder ao botão
                 className="mx-auto"
               />
             </div>
@@ -77,7 +78,7 @@ export default function Home() {
             </p>
             <button
               onClick={handleButtonClick}
-              className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded shadow-lg"
+              className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded shadow-lg sm:py-3 sm:px-6 lg:py-4 lg:px-8 transition-shadow duration-300 hover:shadow-xl"
             >
               Clique Aqui
             </button>

@@ -14,7 +14,7 @@ export default function Family() {
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">Pais</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Pai */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
               <div className="relative w-full h-64">
                 <Image
                   src="/imagens/avos.jpg"
@@ -30,7 +30,7 @@ export default function Family() {
             </div>
 
             {/* Mãe */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
               <div className="relative w-full h-64">
                 <Image
                   src="/imagens/avos1.jpg"
@@ -52,7 +52,7 @@ export default function Family() {
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">Filhos</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Primeiro Filho */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
               <div className="relative w-full h-64">
                 <Image
                   src="/imagens/nunes.jpg"
@@ -71,7 +71,7 @@ export default function Family() {
             </div>
 
             {/* Segundo Filho */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
               <div className="relative w-full h-64">
                 <Image
                   src="/imagens/nayane.jpg"
@@ -96,7 +96,7 @@ export default function Family() {
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">Outros Membros Queridos</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Primeiro membro querido */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
               <div className="relative w-full h-64">
                 <Image
                   src="/imagens/esposa.jpg"
@@ -115,7 +115,7 @@ export default function Family() {
             </div>
 
             {/* Segundo membro querido */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
               <div className="relative w-full h-64">
                 <Image
                   src="/imagens/neto.png"
@@ -126,10 +126,7 @@ export default function Family() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Enzo Gabriel</h3>
-                <p className="text-gray-600 mb-2">neto</p>
-                <p className="text-gray-500 text-sm">
-                  
-                </p>
+                <p className="text-gray-600 mb-2">Neto</p>
               </div>
             </div>
           </div>

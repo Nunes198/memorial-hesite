@@ -14,11 +14,10 @@ type Photo = {
 };
 
 export default function Gallery() {
-  // Atualize o tipo do estado para aceitar 'Photo' ou 'null'
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
 
   const photos: Photo[] = [
-    { id: 1, src: '/imagens/pai-4.jpg', title: 'foto quando jovem', date: '1970' },
+    { id: 1, src: '/imagens/pai-4.jpg', title: 'Foto quando jovem', date: '1970' },
     { id: 2, src: '/imagens/pai-6.png', title: 'Momento Especial', date: '1984' },
     { id: 3, src: '/imagens/pai-2.jpg', title: 'Casamento', date: '1984' },
     { id: 4, src: '/imagens/pai-1.jpg', title: 'Batismo do filho', date: '1987' },
@@ -35,7 +34,7 @@ export default function Gallery() {
           {photos.map((photo) => (
             <div
               key={photo.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+              className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transform transition duration-300 hover:scale-105 hover:shadow-lg"
               onClick={() => setSelectedPhoto(photo)} // Define a foto selecionada ao clicar
             >
               <div className="relative w-full h-64">
