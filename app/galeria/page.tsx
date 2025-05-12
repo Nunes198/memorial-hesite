@@ -17,7 +17,7 @@ export default function Gallery() {
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
 
   const photos: Photo[] = [
-    { id: 1, src: '/imagens/pai-4.jpg', title: 'Foto quando jovem', date: '1970' },
+    { id: 1, src: '/imagens/pai-8.png', title: 'Foto quando jovem', date: '1975' },
     { id: 2, src: '/imagens/pai-6.png', title: 'Momento Especial', date: '1984' },
     { id: 3, src: '/imagens/pai-2.jpg', title: 'Casamento', date: '1984' },
     { id: 4, src: '/imagens/pai-1.jpg', title: 'Batismo do filho', date: '1987' },
