@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Memorial - Em Memória',
+  title: 'Memorial - Eco Sagrado',
   description: 'Um espaço dedicado à memória e celebração da vida de nosso ente querido',
 };
 
